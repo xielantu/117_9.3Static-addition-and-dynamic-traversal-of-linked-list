@@ -11,7 +11,7 @@ struct Student
 	int aihao;
 	int (*p)(int age);
 	struct Stuednt* next;
-	
+
 };
 
 
@@ -20,6 +20,7 @@ struct Test
 	int data;
 	struct Test *next;
 };
+
 void printLink(struct Test* head)
 {
 	struct  Test* point=head;
@@ -47,6 +48,7 @@ int main()
 	t3.next = &t4;
 	t4.next = &t5;
 	t5.next = &t6;
+	t6.next = NULL;//不写这一行也可以，因为t6的next不存在，所以，pointer成为了悬空指针指向了空，所以没必要写这一行
 	
 	printf("use t1 to print 3 numbers\n");
 	printLink(&t1);
